@@ -8,7 +8,7 @@ function mobileMenu() {
   navMenu.classList.toggle("active");
 }
 
-// Close navbar when link is clicked
+// Close navbar when link is sclicked
 const navLink = document.querySelectorAll(".nav-link");
 
 navLink.forEach((n) => n.addEventListener("click", closeMenu));
