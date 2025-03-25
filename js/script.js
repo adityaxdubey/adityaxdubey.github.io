@@ -8,7 +8,7 @@ function mobileMenu() {
   navMenu.classList.toggle("active");
 }
 
-// Close navbar when link is sclicked
+//this to close navbar
 const navLink = document.querySelectorAll(".nav-link");
 
 navLink.forEach((n) => n.addEventListener("click", closeMenu));
@@ -19,7 +19,7 @@ function closeMenu() {
 }
 
 
-// Event Listeners: Handling toggle event
+//listener to toggle
 const toggleSwitch = document.querySelector(
   '.theme-switch input[type="checkbox"]'
 );
@@ -34,7 +34,7 @@ function switchTheme(e) {
 
 toggleSwitch.addEventListener("change", switchTheme, false);
 
-//  Store color theme for future visits
+//theme for future visit
 
 function switchTheme(e) {
   if (e.target.checked) {
@@ -46,7 +46,7 @@ function switchTheme(e) {
   }
 }
 
-// Save user preference on load
+
 
 const currentTheme = localStorage.getItem("theme")
   ? localStorage.getItem("theme")
@@ -67,7 +67,7 @@ if (myDate) {
   const yes = new Date().getFullYear();
   myDate.innerHTML = yes;
 }
-// Model training simulation
+//model training
 document.addEventListener('DOMContentLoaded', function() {
   const totalEpochs = 5;
   let currentEpoch = 0;
@@ -89,37 +89,35 @@ document.addEventListener('DOMContentLoaded', function() {
   function simulateEpoch() {
     currentEpoch++;
     
-    // Update counters
     if (epochCounter) epochCounter.textContent = `${currentEpoch}/${totalEpochs}`;
     
-    // Simulate improving accuracy and decreasing loss
     accuracy = Math.min(0.95, accuracy + (0.1 + Math.random() * 0.1));
     loss = Math.max(0.05, loss - (0.2 + Math.random() * 0.1));
     
     accuracyCounter.textContent = `${(accuracy * 100).toFixed(2)}%`;
     lossCounter.textContent = loss.toFixed(4);
     
-    // Update progress bar
+    //update bar
     const progress = (currentEpoch / totalEpochs) * 100;
     if (progressBar) progressBar.style.width = `${progress}%`;
     
     const randomMessage = sarcasticMessages[Math.floor(Math.random() * sarcasticMessages.length)];
 
-    // Add log message
+    //yaha log daala
     updateLog(`[Epoch ${currentEpoch}/${totalEpochs}] accuracy: ${(accuracy * 100).toFixed(2)}% - loss: ${loss.toFixed(4)}`);
     updateLog(`${randomMessage}`);
     
     // Continue or finish
     if (currentEpoch < totalEpochs) {
       requestAnimationFrame(() => {
-        setTimeout(simulateEpoch, 400); // Reduced delay for faster epochs
+        setTimeout(simulateEpoch, 400); 
       });
     } else {
       // updateLog(`\nTraining complete! Model achieved ${(accuracy * 100).toFixed(2)}% accuracy.`);
       updateLog(`\nThis model is about as reliable as weather forecasts, but it'll have to do.`);
       updateLog(`\nLoading portfolio...`);
       
-      // Hide the overlay after a short delay
+      //overlay hide
       setTimeout(function() {
         const loadingOverlay = document.getElementById('loading-overlay');
         if (loadingOverlay && loadingOverlay.style.display !== 'none') {
@@ -133,15 +131,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Start the simulation
   updateLog('Initializing model architecture (or just pretending to understand TensorFlow)...');
   setTimeout(() => {
     // updateLog('Loading training data (aka random numbers I found on the internet)...');
     setTimeout(() => {
       // updateLog('Starting training process (fingers crossed it actually works)...\n');
-      simulateEpoch(); // Start immediately
-    }, 300); // Reduced delay
-  }, 300); // Reduced delay
+      simulateEpoch();
+    }, 300); 
+  }, 300); 
 });
 const sarcasticMessages = [
   "Training a model that will probably be outsmarted by a toddler...",

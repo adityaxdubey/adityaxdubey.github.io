@@ -1,14 +1,7 @@
-/* This is the required project styling. Will contain essential CSS styles like:
-   * Flex property
-   * Grid layout
-   * Cards and sections
-*/
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
-/* variables */
 :root {
-  /* Colors */
   --primary-color: #ffcd42;
   --secondary-color: #ffd35c;
   --bg-primary: #ffffff;
@@ -568,7 +561,6 @@ body {
 #training-log {
   white-space: pre-line;
 }
-/* Experience Section Styling */
 .experience-timeline {
   display: flex;
   flex-direction: column;
@@ -704,13 +696,11 @@ body {
     grid-template-columns: 1fr;
   }
 }
-/* Main container modifications */
 .container {
   max-width: 1200px;
   padding: 0.5rem 1rem;
 }
 
-/* Compact cards */
 .card, .publication-card, .experience-item {
   padding: 1rem;
   margin-bottom: 1rem;
@@ -742,7 +732,6 @@ body {
   max-height: 1000px;
 }
 
-/* Two-column layout for desktop */
 @media (min-width: 992px) {
   .portfolio-layout {
     display: grid;
@@ -763,15 +752,14 @@ body {
   }
 }
 
-/* Hero Section Styling */
+
 .hero-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* padding: 4rem 2rem; */
- /* Black background for contrast */
+
 }
 
 .hero-section h1 {
