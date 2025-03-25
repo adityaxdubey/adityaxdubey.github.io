@@ -164,11 +164,15 @@ body {
 }
 /* Projects */
 #projects {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem auto 5rem;
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
+#projects h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
 #projects .btn {
   align-self: center;
   margin: 2rem 0;
@@ -180,11 +184,67 @@ body {
   grid-auto-rows: minmax(250px, auto);
   grid-gap: 0.9rem;
 }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 2rem;
+}
+.project-card {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.project-media {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.project-media img, 
+.project-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-details {
+  padding: 1.5rem;
+}
+
+.project-details h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
+}
+
+.project-details p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
 .card .project-bio p {
   font-size: 0.83rem;
 }
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
 
+.project-links a {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: #000;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.project-links a:hover {
+  opacity: 0.8;
+}
 .card .project-bio h3 {
   font-size: 0.9rem;
 }
@@ -259,6 +319,8 @@ body {
 @media (max-width: 768px) {
 }
 
+
+
 @media (max-width: 670px) {
   .navbar .nav-menu {
     position: fixed;
@@ -326,53 +388,402 @@ body {
     display: grid;
     grid-template-columns: 1fr;
   }
-
+  .header-container {
+    margin-top: 6rem; /* slightly reduced */
+    padding: 0.5rem;
+  }
   .header-container .btn {
     border-radius: 5px;
     width: 80%;
   }
 }
 /* Add styles for the Clubs section */
-#clubs {
-  padding: 40px 0;
+/* Clubs Section Styling */
+.clubs-section {
+  padding: 4rem 0;
 }
 
-.club-container {
+.clubs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.club-item {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.club {
-  width: 30%;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-
-  /* Add more styling as needed */
+.club-item:hover {
+  transform: translateY(-10px);
 }
 
-.club:hover {
-  transform: scale(1.05);
-}
-
-.club-info {
-  padding: 15px;
+.club-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .club-logo img {
   max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-.club-bio h3 {
-  margin-top: 10px;
-  color: #000000;
+.club-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-color);
 }
-/* Override the background image for the club cards */
-#clubs .card {
-  background: none; /* or use 'background: transparent;' */
+
+.club-details p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.club-link {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: var(--weight-semibold);
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.club-link:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .clubs-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 /* Add more specific styles as needed */
+#neural-network-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Behind content */
+}
+
+.profile-image {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  /* Remove the bouncing animation */
+  animation: none !important;
+  /* Add a subtle glow effect that matches your primary color */
+  box-shadow: 0 0 25px rgba(255, 205, 66, 0.6);
+  /* Add a border to make the image stand out from the network */
+  border: 3px solid var(--primary-color);
+  /* Ensure the image maintains proper dimensions */
+  object-fit: cover;
+  /* Smooth transition for hover effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 205, 66, 0.8);
+}
+#loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease-out;
+}
+
+.training-container {
+  width: 80%;
+  max-width: 600px;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.training-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.progress-bar-container {
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.log-container {
+  height: auto;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 12px;
+}
+
+#training-log {
+  white-space: pre-line;
+}
+/* Experience Section Styling */
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.experience-item {
+  display: flex;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.experience-item:before {
+  content: '';
+  position: absolute;
+  left: 140px;
+  top: 0;
+  bottom: -2rem;
+  width: 2px;
+  background-color: var(--primary-color);
+}
+
+.experience-item:last-child:before {
+  display: none;
+}
+
+.experience-date {
+  width: 110px;
+  font-weight: var(--weight-bold);
+  color: var(--primary-color);
+}
+
+.experience-content {
+  flex: 1;
+  padding-left: 2rem;
+}
+
+.experience-content h3 {
+  margin-bottom: 0.5rem;
+}
+
+.experience-content h4 {
+  font-weight: var(--weight-semibold);
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+/* Publications Section Styling */
+.publications-container {
+
+  padding: 4rem 0;
+}
+
+.publications-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.publication-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.publication-item {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.publication-date {
+  flex: 0 0 150px;
+  font-weight: bold;
+  color: #ffcd42;
+}
+
+.publication-content {
+  flex: 1;
+}
+
+.publication-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.publication-venue,
+.publication-authors,
+.publication-abstract {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.read-paper-link {
+  display: inline-block;
+  color: #ffcd42;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.read-paper-link:hover {
+  text-decoration: underline;
+}
+
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .experience-item {
+    flex-direction: column;
+  }
+  
+  .experience-item:before {
+    left: 10px;
+  }
+  
+  .experience-date {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .experience-content {
+    padding-left: 2rem;
+  }
+  
+  .publications-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Main container modifications */
+.container {
+  max-width: 1200px;
+  padding: 0.5rem 1rem;
+}
+
+/* Compact cards */
+.card, .publication-card, .experience-item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Reduce spacing */
+.division {
+  margin: 2rem 0;
+}
+
+.content-text {
+  margin: 1rem 0;
+}
+
+.content-text h2 {
+  font-size: 2rem;
+}
+
+/* Create expandable sections */
+.section-collapsible {
+  overflow: hidden;
+  max-height: 300px;
+  transition: max-height 0.3s ease;
+}
+
+.section-collapsible:hover, 
+.section-collapsible:focus-within {
+  max-height: 1000px;
+}
+
+/* Two-column layout for desktop */
+@media (min-width: 992px) {
+  .portfolio-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+  }
+  
+  .portfolio-sidebar {
+    position: sticky;
+    top: 100px;
+    height: calc(100vh - 120px);
+  }
+  
+  .portfolio-content {
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
+    padding-right: 1rem;
+  }
+}
+
+/* Hero Section Styling */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* padding: 4rem 2rem; */
+ /* Black background for contrast */
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  line-height: 1.8; /* Improve readability */
+  max-width: 800px; /* Restrict width for better focus */
+  margin-bottom: 2rem; /* Add spacing below the text */
+}
+

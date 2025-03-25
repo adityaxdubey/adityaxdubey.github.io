@@ -5,76 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Primary Meta Tags -->
-    <title>Portfolio Template - Open source</title>
-    <meta name="title" content="Portfolio Template - Open source" />
-    <meta
-      name="description"
-      content="Build or customize your portfolio website using this super easy template. Free to use if you are a member of the community or a contributor to this project"
-    />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://github.com/CommunityPro/portfolio-html"
-    />
-    <meta property="og:title" content="Portfolio Template - Open source" />
-    <meta
-      property="og:description"
-      content="Build or customize your portfolio website using this super easy template. Free to use if you are a member of the community or a contributor to this project"
-    />
-    <meta
-      property="og:image"
-      content="https://user-images.githubusercontent.com/62628408/150613011-b78a7f5a-0af1-4312-aab0-0022e7258693.png"
-    />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta
-      property="twitter:url"
-      content="https://github.com/CommunityPro/portfolio-html"
-    />
-    <meta property="twitter:title" content="Portfolio Template - Open source" />
-    <meta
-      property="twitter:description"
-      content="Build or customize your portfolio website using this super easy template. Free to use if you are a member of the community or a contributor to this project"
-    />
-    <meta
-      property="twitter:image"
-      content="https://user-images.githubusercontent.com/62628408/150613011-b78a7f5a-0af1-4312-aab0-0022e7258693.png"
-    />
-
-    <!-- Link -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon/favicon-16x16.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="assets/favicon/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="assets/favicon/android-chrome-512x512.png"
-    />
-    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+    <title>Aditya Dubey</title>
     <link rel="manifest" href="assets/favicon/site.webmanifest" />
     <link
       rel="stylesheet"
@@ -86,6 +17,23 @@
     <link rel="stylesheet" href="css/utilities.css" />
   </head>
   <body>
+    <div id="loading-overlay">
+      <div class="training-container">
+        <h2>Training Model...</h2>
+        <div class="metrics">
+          <div class="metric">Epoch: <span id="epoch-counter">0/10</span></div>
+          <div class="metric">Accuracy: <span id="accuracy-counter">0.00%</span></div>
+          <div class="metric">Loss: <span id="loss-counter">2.3024</span></div>
+        </div>
+        <div class="progress-bar-container">
+          <div id="progress-bar"></div>
+        </div>
+        <div class="log-container">
+          <div id="training-log"></div>
+        </div>
+      </div>
+    </div>
+    
     <header id="hero">
       <!-- Navbar -->
       <nav class="navbar">
@@ -93,8 +41,8 @@
           <!-- Logo -->
           <h1 id="logo">
             <a href="https://github.com/adityaxdubey/adityaxdubey.github.io"
-              ><img src="./assets/logo.png" alt="Your Logo"
-            /></a>
+              >
+          </a>
           </h1>
           <!-- Navbar links -->
           <ul class="nav-menu">
@@ -106,7 +54,7 @@
             <li>
               <a
                 class="nav-link btn btn-primary"
-                href="https://drive.google.com/file/d/13vZn76uedllV967VR0hcEJOBfHKt1vDA/view?usp=sharing"
+                href="https://drive.google.com/file/d/19Ugr3eLdIBggGLw9BPs2YRZIJv8Rv_Tc/view?usp=sharing"
                 >RESUME <i class="fas fa-arrow-right"></i
               ></a>
             </li>
@@ -130,192 +78,197 @@
       </nav>
 
       <section class="header-container">
-        <img
-          class="profile-image"
-          src="assets/1698141897370.jpg"
-          alt=""
-        />
+        <div id="neural-network-container"></div>
+
+  <!-- Profile Image -->
+        <img id="profile-image" class="profile-image" src="assets/1698141897370.jpg" alt="" />
         <h1>Hi I'm Aditya Dubey</h1>
 
-        <div class="content-text">
-          <h2>A budding</h2>
-          <h2>ML Enthusiast</h2>
-
-          <p>
-            2nd year Sophomore Student
+        <section id="hero" class="hero-section">
+          <h1>Delivering AI Solutions</h1>
+          <p class="hero-description">
+            Passionate about building things that make a difference—whether it's through clever AI or solid software engineering. 
+            I love tackling complex problems and collaborating with others to create innovative solutions. Always learning and 
+            excited to contribute to impactful projects.
           </p>
-        </div>
-        <a
-          href="https://github.com/adityaxdubey"
-          class="btn btn-secondary"
-          target="_blank"
-          >Connect With Me</a
-        >
+          <a href="#" class="btn btn-primary">Connect With Me</a>
+        </section>
+        
       </section>
     </header>
+    <!-- Experience -->
+<section id="experience" class="experience-container container">
+  <div class="division"></div>
+  <div class="content-text">
+    <h2>Experience</h2>
+    <p>My professional journey in machine learning</p>
+  </div>
+
+  <article class="experience-timeline">
+    <!-- Experience Item 1 -->
+    <div class="experience-item">
+      <div class="experience-date">Feb 2025 - Present(June Expected)</div>
+      <div class="experience-content">
+        <h3>STEP Intern</h3>
+        <h4>Maruti Suzuki India Limited</h4>
+        <p>Optimizing real-time data ingestion pipelines Cloud Data Platform using AWS Glue and Kinesis Streams, with 22%
+          improved scalability and throughput.</p>
+      </div>
+    </div>
+
+    <!-- Experience Item 2 -->
+    <div class="experience-item">
+      <div class="experience-date">Jan 2024 - April 2024</div>
+      <div class="experience-content">
+        <h3>Research Intern</h3>
+        <h4>IIT Patna (Indian Institute of technology)</h4>
+        <p>Curated and preprocessed a large-scale dataset of over 3000 images for training and evaluation of the transformer
+          model.<br>
+          • Experimented with ViT architectures, adapting the Transformer model for image recognition tasks</p>
+      </div>
+    </div>
+
+    <!-- Add more experience items as needed -->
+  </article>
+</section>
+
 
     <!-- Projects -->
-    <section id="projects" class="project-container container">
-      <div class="division"></div>
-      <div class="content-text">
-        <h2>Projects</h2>
-        <p>Check out some of my personal and paid projects</p>
-      </div>
-
-      <article class="project">
+    <section id="projects">
+      <h2>Projects</h2>
+      
+      <div class="projects-grid">
         <!-- Project 1 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Image Classification</h3>
-              <p>CNN Segementation</p>
-            </div>
-
-            <div class="project-link">
-              <a href="https://github.com/adityaxdubey/cifar-cnn-classifier" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://github.com/adityaxdubey/cifar-cnn-classifier" target="_blank"><i class="fas fa-globe"></i></a>
+        <div class="project-card">
+          <div class="project-media">
+            <!-- Replace with your project video or image -->
+            <img src="assets/Architecture Diagram_white.png" alt="CNN Project">
+          </div>
+          <div class="project-details">
+            <h3>Agentic Debate Simulator</h3>
+            <p>Developed an AI-powered debate application using LangGraph for turn-based control
+              and Flask with WebSockets for real-time backend-frontend communication for dynamic inference. Balanced
+              GPT-3.5-turbo (cloud) and Mistral-7B-v0.1 (local) models.</p>
+            <div class="project-links">
+              <a href="https://github.com/adityaxdubey/Debate-Simulator" target="_blank">View Project</a>
             </div>
           </div>
         </div>
-
+    
         <!-- Project 2 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Music CLassifier</h3>
-              <p>Genre Detection</p>
-            </div>
-
-            <div class="project-link">
-              <a href="https://github.com/adityaxdubey/music-genre-classification-librosa" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://github.com/adityaxdubey/music-genre-classification-librosa" target="_blank"><i class="fas fa-globe"></i></a>
+        <div class="project-card">
+          <div class="project-media">
+            <img src="assets/morphogan.png" alt="Music Classifier">
+          </div>
+          <div class="project-details">
+            <h3> MorphoGAN</h3>
+            <p> Image style transfer tool that transforms your content images into artwork inspired by famous
+              artistic styles. Built using VGG19, Generative Adversarial Network and Adaptive Instance Normalization (AdaIN)</p>
+            <div class="project-links">
+              <a href="https://github.com/adityaxdubey/MorphoGAN" target="_blank">View Project</a>
             </div>
           </div>
         </div>
-
-        <!-- Porject 3 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Three</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
+        <div class="project-card">
+          <div class="project-media">
+            <!-- Replace with your project video or image -->
+            <img src="assets/Screenshot 2025-03-24 141422.png" alt="CNN Project">
+          </div>
+          <div class="project-details">
+            <h3>StoryScape</h3>
+            <p> Django-based web application designed to help users generate creative stories, characters, and dialogues. It leverages advanced natural language processing (NLP) and AI-driven tools, such as GPT-2 and Google's Gemini API, to automate the process of storytelling.</p>
+            <div class="project-links">
+              <a href="https://github.com/adityaxdubey/StoryScape" target="_blank">View Project</a>
             </div>
           </div>
         </div>
-
-        <!-- Project 4 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Fake News Identifier</h3>
-              <p>Neural Networks</p>
-            </div>
-
-            <div class="project-link">
-              <a href="https://github.com/adityaxdubey/fake-news-detection" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://github.com/adityaxdubey/fake-news-detection" target="_blank"><i class="fas fa-globe"></i></a>
+        <div class="project-card">
+          <div class="project-media">
+            <!-- Replace with your project video or image -->
+            <img src="assets/musicclas.jpeg" alt="CNN Project">
+          </div>
+          <div class="project-details">
+            <h3> Music Genre Classifier</h3>
+            <p>MLP implementation of music genre using GTZAN Dataset. The model uses a dataset of audio features extracted from various music tracks, and it is trained to predict the genre of a given piece of music. </p>
+            <div class="project-links">
+              <a href="https://github.com/adityaxdubey/cifar-cnn-classifier" target="_blank">View Project</a>
             </div>
           </div>
         </div>
-
-        <!-- Project 5 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Iris Recognition</h3>
-              <p>First ML Hands-on</p>
-            </div>
-
-            <div class="project-link">
-              <a href="https://github.com/adityaxdubey/Iris-Flower-Detection" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="https://github.com/adityaxdubey/Iris-Flower-Detection" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div href="" class="card">
-          <div class="project-info">
-            <div class="project-bio">
-              <h3>Project Six</h3>
-              <p>React, Redux, SASS</p>
-            </div>
-
-            <div class="project-link">
-              <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="#" target="_blank"><i class="fas fa-globe"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
+        <!-- Add more projects following the same pattern -->
+      </div>
+    </section>
+    
 <!-- Clubs -->
+<!-- Publications -->
+<section id="publications" class="publications-container container">
+  <h2>Publications</h2>
+  
+  <div class="publication-list">
+    <div class="publication-item">
+      <div class="publication-date">Jan 2025</div>
+      <div class="publication-content">
+        <h3>Global Energy Consumption Patterns and Optimization using Big Data</h3>
+        <p class="publication-venue">2024 9th International Conference on Communication and Electronics Systems (ICCES)</p>
+        <p class="publication-authors">Aditya Dubey; Anuj Tiwari; Ayush Bhardwaj;</p>
+        <p class="publication-abstract">
+          Leveraging Apache Spark, Hadoop, and ML models (LSTM & Random Forest) to enhance energy consumption forecasting with 88% accuracy.</p>
+        <a href="https://ieeexplore.ieee.org/document/10859370" class="read-paper-link">READ PAPER</a>
+      </div>
+    </div>
+
+    <div class="publication-item">
+      <div class="publication-date">Feb 2025</div>
+      <div class="publication-content">
+        <h3>Conditional GANs: How to Control Generated Outputs</h3>
+        <p class="publication-venue">DataX Journal Medium Article</p>
+        <p class="publication-authors">Aditya Dubey</p>
+        <p class="publication-abstract"> This blog post will explore the architecture, mathematics, and applications of Conditional GANs in depth allowing for more controlled and targeted outputs of GAN process.</p>
+        <a href="https://medium.com/data-science-community-srm/conditional-gans-how-to-control-generated-outputs-bbc46324100b" class="read-paper-link">READ PAPER</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
     <!-- You can add more clubs following the same structure -->
 <!-- Clubs -->
-<section id="clubs" class="club-container container">
+<section id="clubs" class="clubs-section container">
   <div class="division"></div>
   <div class="content-text">
     <h2>Clubs</h2>
-    <p>Explore the clubs I am a part of</p>
+    <p>Organizations I contribute to</p>
   </div>
 
-  <article class="club">
+  <div class="clubs-grid">
     <!-- Club 1 -->
-    <div href="" class="card">
-      <div class="club-info">
-        <!-- Club Logo -->
-        <div class="club-logo">
-          <a href="https://www.dscommunity.in/" target="_blank">
-            <img src="./assets/project/datasciencecommunitysrm_logo.png" alt="Club 1 Logo">
-          </a>
-        </div>
-
-        <div class="club-bio">
-          <h3 style="color: rgb(181, 245, 179);">Data Science Community SRM</h3>
-          <p style="color: rgb(2, 103, 153);">A technology driven Data Science-based student-led innovation community at SRM IST.</p>
-        </div>
-
-        <div class="club-link">
-          <!-- Add links or any other information about the club -->
-        </div>
+    <div class="club-item">
+      <div class="club-logo">
+        <img src="./assets/project/datasciencecommunitysrm_logo.png" alt="Data Science Community SRM">
+      </div>
+      <div class="club-details">
+        <h3>Data Science Community SRM</h3>
+        <p>A technology driven Data Science-based student-led innovation community at SRM IST.</p>
+        <a href="https://www.dscommunity.in/" target="_blank" class="club-link">Visit Website</a>
       </div>
     </div>
-<br>
+
     <!-- Club 2 -->
-    <div href="" class="card">
-      <div class="club-info">
-        <!-- Club Logo -->
-        <div class="club-logo">
-          <a href="https://club2website.com" target="_blank">
-            <img src="./assets/project/1631390746545.png" alt="Club 2 Logo">
-          </a>
-        </div>
-
-        <div class="club-bio">
-          <h3 style="color: rgb(181, 245, 179);">Next Tech Lab</h3>
-          <p style="color: rgb(2, 103, 153);">The first and only student run multi-disciplinary lab of SRM University at Chennai and Amaravati. The lab has currently 400+ members and associates with it.
-          </p>
-        </div>
-
-        <div class="club-link">
-          <!-- Add links or any other information about the club -->
-        </div>
+    <div class="club-item">
+      <div class="club-logo">
+        <img src="./assets/project/1631390746545.png" alt="Next Tech Lab">
+      </div>
+      <div class="club-details">
+        <h3>Next Tech Lab</h3>
+        <p>The first and only student run multi-disciplinary lab of SRM University at Chennai and Amaravati.</p>
+        <a href="https://nexttechlab.in/" target="_blank" class="club-link">Visit Website</a>
       </div>
     </div>
-
-    <!-- You can add more clubs following the same structure -->
-  </article>
-
-  <a href="#" class="btn btn-secondary" target="_blank">Explore More <i class="fas fa-arrow-right"></i></a>
+  </div>
 </section>
 
-  <a href="https://www.linkedin.com/in/adityaxdubey/" class="btn btn-secondary" target="_blank">Explore More <i class="fas fa-arrow-right"></i></a>
+  
 </section>
 
       <!-- <a href="#" class="btn btn-secondary"
@@ -354,9 +307,12 @@
             /> -->
           </a>
         </div>
-        <p>Made with keyboard strokes by Aditya Dubey </span></p>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.min.js"></script>
+    <script src="js/network.js"></script>
+
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -18,6 +18,7 @@ function closeMenu() {
   navMenu.classList.remove("active");
 }
 
+
 // Event Listeners: Handling toggle event
 const toggleSwitch = document.querySelector(
   '.theme-switch input[type="checkbox"]'
@@ -62,6 +63,100 @@ if (currentTheme) {
 //Adding date
 
 let myDate = document.querySelector("#datee");
+if (myDate) {
+  const yes = new Date().getFullYear();
+  myDate.innerHTML = yes;
+}
+// Model training simulation
+document.addEventListener('DOMContentLoaded', function() {
+  const totalEpochs = 5;
+  let currentEpoch = 0;
+  let accuracy = 0;
+  let loss = 2.3024;
+  
+  const epochCounter = document.getElementById('epoch-counter');
+  const accuracyCounter = document.getElementById('accuracy-counter');
+  const lossCounter = document.getElementById('loss-counter');
+  const progressBar = document.getElementById('progress-bar');
+  const trainingLog = document.getElementById('training-log');
+  const loadingOverlay = document.getElementById('loading-overlay');
+  
+  function updateLog(message) {
+    trainingLog.innerHTML += message + '\n';
+    trainingLog.scrollTop = trainingLog.scrollHeight;
+  }
+  
+  function simulateEpoch() {
+    currentEpoch++;
+    
+    // Update counters
+    if (epochCounter) epochCounter.textContent = `${currentEpoch}/${totalEpochs}`;
+    
+    // Simulate improving accuracy and decreasing loss
+    accuracy = Math.min(0.95, accuracy + (0.1 + Math.random() * 0.1));
+    loss = Math.max(0.05, loss - (0.2 + Math.random() * 0.1));
+    
+    accuracyCounter.textContent = `${(accuracy * 100).toFixed(2)}%`;
+    lossCounter.textContent = loss.toFixed(4);
+    
+    // Update progress bar
+    const progress = (currentEpoch / totalEpochs) * 100;
+    if (progressBar) progressBar.style.width = `${progress}%`;
+    
+    const randomMessage = sarcasticMessages[Math.floor(Math.random() * sarcasticMessages.length)];
 
-const yes = new Date().getFullYear();
-myDate.innerHTML = yes;
+    // Add log message
+    updateLog(`[Epoch ${currentEpoch}/${totalEpochs}] accuracy: ${(accuracy * 100).toFixed(2)}% - loss: ${loss.toFixed(4)}`);
+    updateLog(`${randomMessage}`);
+    
+    // Continue or finish
+    if (currentEpoch < totalEpochs) {
+      requestAnimationFrame(() => {
+        setTimeout(simulateEpoch, 400); // Reduced delay for faster epochs
+      });
+    } else {
+      // updateLog(`\nTraining complete! Model achieved ${(accuracy * 100).toFixed(2)}% accuracy.`);
+      updateLog(`\nThis model is about as reliable as weather forecasts, but it'll have to do.`);
+      updateLog(`\nLoading portfolio...`);
+      
+      // Hide the overlay after a short delay
+      setTimeout(function() {
+        const loadingOverlay = document.getElementById('loading-overlay');
+        if (loadingOverlay && loadingOverlay.style.display !== 'none') {
+          console.log('Force hiding loading screen after timeout');
+          loadingOverlay.style.opacity = '0';
+          setTimeout(() => {
+            loadingOverlay.style.display = 'none';
+          },150);
+        }
+      }, 150);
+    }
+  }
+  
+  // Start the simulation
+  updateLog('Initializing model architecture (or just pretending to understand TensorFlow)...');
+  setTimeout(() => {
+    // updateLog('Loading training data (aka random numbers I found on the internet)...');
+    setTimeout(() => {
+      // updateLog('Starting training process (fingers crossed it actually works)...\n');
+      simulateEpoch(); // Start immediately
+    }, 300); // Reduced delay
+  }, 300); // Reduced delay
+});
+const sarcasticMessages = [
+  "Training a model that will probably be outsmarted by a toddler...",
+  "Converting caffeine into machine learning code...",
+  "Pretending to understand neural networks since 2023...",
+  "Teaching silicon to think. What could go wrong?",
+  "Making random guesses and calling it AI...",
+  "Epoch 4/10: Still better accuracy than my life choices",
+  "Adding unnecessary complexity to impress recruiters...",
+  "If this model works, it's pure luck...",
+  "Calculating the probability of you getting hired...",
+  "Overfitting to your resume expectations...",
+  "Neural network currently experiencing existential crisis...",
+  "Gradient descent: Like my career, slowly going downhill",
+  "Backpropagating errors (and my poor life decisions)",
+  "Optimizing hyperparameters and my chances of employment",
+  "This loading bar is about as useful as a degree in ML"
+];
