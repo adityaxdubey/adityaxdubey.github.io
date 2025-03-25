@@ -37,7 +37,7 @@
 }
 
 html {
-  font-size: 100%;
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
@@ -313,7 +313,11 @@ body {
 @media (max-width: 768px) {
 }
 
-
+@media (max-width: 1200px) {
+  body {
+    font-size: 14px; /* Scale down content for smaller screens */
+  }
+}
 
 @media (max-width: 670px) {
   .navbar .nav-menu {
