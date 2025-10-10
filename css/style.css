@@ -1,0 +1,247 @@
+/* --- Root Variables --- */
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #1a1a1a;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --accent-color: #ffcd42;
+  --accent-text: #1a1a1a;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #f4f4f4;
+  --card-bg: #2a2a2a;
+  --border-color: #3a3a3a;
+  --accent-text: #1a1a1a;
+}
+
+/* --- Base & Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "IBM Plex Mono", monospace;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
+} 
+
+/* --- Neural Network Background --- */
+#neural-network-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.2; /* Subtle background */
+  pointer-events: none;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Header & Navigation --- */
+header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text-color);
+}
+.logo sup {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+}
+#theme-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hide one icon based on theme */
+[data-theme="light"] #sun-icon { display: none; }
+[data-theme="dark"] #moon-icon { display: none; }
+
+/* --- Main Content --- */
+main {
+  flex-grow: 1;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+p {
+  margin-bottom: 1rem;
+  max-width: 65ch; /* Optimal reading line length */
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 0.75rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+li::before {
+    content: '→';
+    position: absolute;
+    left: -1rem;
+    color: var(--accent-color);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 3rem 0;
+}
+
+.social-links a {
+  margin-right: 1rem;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  color: var(--text-color);
+}
+
+/* --- Project Grid --- */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+[data-theme="dark"] .card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.github-link {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: var(--text-secondary);
+  transition: color 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+}
+
+.github-link:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.github-link svg {
+  display: block;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+/* --- Loading Screen (Copied and adapted from previous version) --- */
+#loading-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: #1a1a1a; color: #f4f4f4; display: flex; justify-content: center;
+  align-items: center; z-index: 1000; transition: opacity 0.5s ease-out;
+}
+.training-container {
+  width: 90%; max-width: 600px; background-color: #2a2a2a; border-radius: 8px;
+  padding: 2rem;
+}
+.training-container h2 { text-align: center; margin-bottom: 1.5rem; color: var(--accent-color); }
+.metrics { display: flex; justify-content: space-between; margin-bottom: 1rem; }
+.progress-bar-container { height: 10px; background-color: #3a3a3a; border-radius: 5px; overflow: hidden; margin-bottom: 1rem; }
+#progress-bar { height: 100%; width: 0%; background-color: var(--accent-color); transition: width 0.3s ease; }
+.log-container { height: 150px; overflow-y: auto; background-color: #1a1a1a; padding: 1rem; font-size: 0.8rem; border-radius: 5px; }
+#training-log { white-space: pre-line; }
+
