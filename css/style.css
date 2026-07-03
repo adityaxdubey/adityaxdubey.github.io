@@ -174,6 +174,10 @@ hr {
   color: var(--text-color);
 }
 
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
 /* --- Project Grid --- */
 .grid-layout {
   display: grid;
@@ -244,4 +248,67 @@ footer {
 #progress-bar { height: 100%; width: 0%; background-color: var(--accent-color); transition: width 0.3s ease; }
 .log-container { height: 150px; overflow-y: auto; background-color: #1a1a1a; padding: 1rem; font-size: 0.8rem; border-radius: 5px; }
 #training-log { white-space: pre-line; }
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  header {
+    padding: 1rem 0;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    max-width: none;
+  }
+
+  .social-links a {
+    display: inline-block;
+    margin-right: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .metrics {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 

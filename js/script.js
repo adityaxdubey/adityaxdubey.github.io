@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const htmlElement = document.documentElement;
 
   // Set initial theme from localStorage or system preference
-  const currentTheme = localStorage.getItem("theme") || "light";
+  const currentTheme = localStorage.getItem("theme") || "dark";
   htmlElement.setAttribute("data-theme", currentTheme);
 
   themeToggleButton.addEventListener("click", () => {
